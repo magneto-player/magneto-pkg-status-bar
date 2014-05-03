@@ -1,5 +1,5 @@
 
-StatusbarView = require './views/statusbar'
+StatusbarView = require './views/status-bar'
 path = require 'path'
 
 class Statusbar

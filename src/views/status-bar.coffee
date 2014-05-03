@@ -18,9 +18,9 @@ class StatusbarView extends View
 
   initialize: ->
     @on 'click', '.os-nav-item-close', -> process.exit(0)
-    @on 'click', '.os-nav-item-min', -> nw.gui.Window.get().minimize()
-    @on 'click', '.os-nav-item-max', -> nw.gui.Window.get().maximize()
-    @on 'click', '.fullscreen', -> nw.gui.Window.get().toggleFullscreen()
+    @on 'click', '.os-nav-item-min', -> niceplay.workspace.minimize()
+    @on 'click', '.os-nav-item-max', -> niceplay.workspace.maximize()
+    @on 'click', '.fullscreen', -> niceplay.workspace.toggleFullscreen()
 
   setTitle: (title) ->
     @find('.title-file').html(title)
