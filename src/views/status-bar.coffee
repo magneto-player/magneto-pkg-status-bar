@@ -17,14 +17,14 @@ class StatusbarView extends View
       @a class:'fullscreen', href: '#', 'fullscreen'
 
   initialize: ->
-    @on 'click', '.os-nav-item-close', -> process.exit(0)
-    @on 'click', '.os-nav-item-min', -> niceplay.workspace.minimize()
-    @on 'click', '.os-nav-item-max', -> niceplay.workspace.maximize()
-    @on 'click', '.fullscreen', -> niceplay.workspace.toggleFullscreen()
+    @on 'click', '.os-nav-item-close', -> niceplay.emit('!window:exit')
+    @on 'click', '.os-nav-item-min', -> niceplay.emit('!window:minimize')
+    @on 'click', '.os-nav-item-max', -> niceplay.emit('!window:maximize')
+    @on 'click', '.fullscreen', -> niceplay.emit('!window:toggle-fullscreen')
 
   setTitle: (title) ->
     @find('.title-file').html(title)
-    nw.gui.Window.get().title = title
+    niceplay.emit('!window:set-title', title)
 
   setIcon: (icon) ->
     @find('.icon').find('i')
