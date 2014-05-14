@@ -14,7 +14,8 @@ class StatusbarView extends View
 
       @div class: 'title-file'
 
-      @a class:'fullscreen', href: '#', 'fullscreen'
+      @a class:'fullscreen', href: '#', =>
+        @i class: 'icon icon-fullscreen'
 
   initialize: ->
     @on 'click', '.os-nav-item-close', -> niceplay.emit('!window:exit')
