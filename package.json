@@ -1,6 +1,6 @@
 {
   "name": "niceplay-pkg-status-bar",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "lib/pkg.js",
   "scripts": {
     "prepublish": "grunt src"
