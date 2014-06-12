@@ -1,5 +1,5 @@
 {
-  "name": "niceplay-pkg-status-bar",
+  "name": "magneto-pkg-status-bar",
   "version": "0.0.2",
   "main": "lib/pkg.js",
   "scripts": {

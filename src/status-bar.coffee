@@ -7,11 +7,11 @@ class Statusbar
     @statusbarView = new StatusbarView()
     @statusbarView.appendTo('body')
 
-    niceplay.on 'file:new', @load
+    magneto.on 'file:new', @load
 
-    niceplay.on '!player:play', @play
-    niceplay.on '!player:pause', @pause
-    niceplay.on '!player:stop', @stop
+    magneto.on '!player:play', @play
+    magneto.on '!player:pause', @pause
+    magneto.on '!player:stop', @stop
 
   play: =>
     @statusbarView.setIcon 'icon-play'
@@ -28,5 +28,12 @@ class Statusbar
         fileName
       )
     )
+
+  remove: ->
+    @statusbarView.remove()
+    magneto.off 'file:new', @load
+    magneto.off '!player:play', @play
+    magneto.off '!player:pause', @pause
+    magneto.off '!player:stop', @stop
 
 module.exports = Statusbar

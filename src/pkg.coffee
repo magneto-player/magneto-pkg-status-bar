@@ -5,6 +5,8 @@ module.exports =
   activate: ->
     StatusBar = StatusBar or require './status-bar'
 
-    new StatusBar().initialize()
+    @statusBar = new StatusBar()
+    @statusBar.initialize()
 
   desactivate: ->
+    @statusBar.remove()
